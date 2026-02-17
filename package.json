@@ -1,0 +1,23 @@
+{
+  "name": "figma-moodboard-skill",
+  "version": "0.1.0",
+  "description": "OpenClaw Skill - Auto-search reference images and insert into FigJam",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "server": "node src/server/server.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": ["figma", "moodboard", "clip", "unsplash", "pexels", "openclaw"],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
