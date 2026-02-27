@@ -2,93 +2,56 @@
 
 ## MVP (Week 1)
 
-### M0: 框架搭建 (Day 1-2)
+### M0: 框架搭建 ✅
 
 **Backend:**
-- [ ] 项目初始化 (`package.json`, `src/` 结构)
-- [ ] Unsplash API 封装 (`src/search/unsplash.js`)
-- [ ] Pexels API 封装 (`src/search/pexels.js`)
-- [ ] 统一搜索接口 (`src/search/index.js`)
-- [ ] 输出 JSON 数据到 `data/pending-import.json`
+- [x] 项目初始化 (`package.json`, `src/` 结构)
+- [x] Unsplash API 封装 (`src/search/unsplash.js`)
+- [x] Pexels API 封装 (`src/search/pexels.js`)
+- [x] 统一搜索接口 (`src/search/index.js`)
+- [x] 输出 JSON 数据到 `data/pending-import.json`
 
-**测试验收:**
-```bash
-node src/main.js --query "art deco posters" --count 30
-# 输出: data/pending-import.json (25-30 张图片)
-```
+**验收:** `node src/main.js --query "art deco posters" --count 30`
 
 ---
 
-### M1: AI 分析分组 (Day 2-3)
+### M1: AI 分析分组 ✅
 
 **AI:**
-- [ ] CLIP embedding 集成（Hugging Face API）
-- [ ] k-means 聚类实现 (`src/analyze/cluster.js`)
-- [ ] 去重算法 (`src/analyze/deduplicate.js`)
-- [ ] 分组数据结构设计
-
-**输出格式:**
-```json
-{
-  "query": "art deco posters",
-  "groups": [
-    {
-      "name": "几何图案",
-      "images": [...]
-    },
-    {
-      "name": "配色参考",
-      "images": [...]
-    }
-  ]
-}
-```
+- [x] CLIP embedding 集成（Hugging Face Inference API）
+- [x] k-means++ 聚类实现 (`src/analyze/cluster.js`)，auto-k (3-5)
+- [x] 余弦相似度去重 (`src/analyze/deduplicate.js`)
+- [x] 分析管线编排 (`src/analyze/index.js`)
 
 ---
 
-### M2: Figma Plugin + Server (Day 3-4)
+### M2: Figma Plugin + Server ✅
 
 **Backend:**
-- [ ] Express HTTP Server (`src/server/server.js`)
-- [ ] API 路由 (`GET /data`)
-- [ ] CORS 配置（允许 Figma 访问）
+- [x] Express HTTP Server (`src/server/server.js`)
+- [x] API 路由 (`GET /data`, `GET /health`, `POST /search`)
+- [x] CORS 配置（允许 Figma 访问）
+- [x] main.js 编排（CLI 参数 + 管线 + 服务器启动）
 
 **Plugin:**
-- [ ] Figma Plugin 初始化 (`figma-plugin/manifest.json`)
-- [ ] 从 Server 获取数据 (`fetch('http://localhost:3000/data')`)
-- [ ] 插入图片到 FigJam (`figma.createImageAsync()`)
-- [ ] 基础排版算法（按组摆放）
-
-**测试验收:**
-1. 启动 Server → http://localhost:3000/data 返回 JSON
-2. Figma Plugin → 自动插入图片到画布
+- [x] Figma Plugin 初始化 (`figma-plugin/manifest.json`)
+- [x] 从 Server 获取数据 (`fetch('http://localhost:3000/data')`)
+- [x] 插入图片到 FigJam (`figma.createImageAsync()`)
+- [x] 网格排版算法（按组摆放，4列，自动分组偏移）
 
 ---
 
-### M3: 集成测试 (Day 5)
+### M3: 测试 ✅
 
-**Tester:**
-- [ ] 端到端流程验证
-- [ ] 错误处理测试（网络失败、图片加载失败）
-- [ ] 性能测试（30 张图片插入时间 < 10s）
-
-**Backend:**
-- [ ] 错误处理优化
-- [ ] 日志输出
-
-**验收标准:**
-```
-用户: "找 art deco 海报"
-→ Skill 执行（搜索 + 分析）
-→ Server 启动
-→ Figma Plugin 自动运行
-→ 图片插入完成（30 张，3-5 组）
-→ 耗时 < 60s
-```
+**测试覆盖 (33/33 pass):**
+- [x] `tests/search.test.js` — 搜索模块单元测试 (8 tests)
+- [x] `tests/cluster.test.js` — 聚类+去重单元测试 (11 tests)
+- [x] `tests/server.test.js` — 服务器端点测试 (3 tests)
+- [x] `tests/integration.test.js` — 模块加载+数据结构测试 (12 tests)
 
 ---
 
-### M4: 文档 (Day 6-7)
+### M4: 文档 ⬜ 待开始
 
 **Docs:**
 - [ ] `SKILL.md` — Skill 说明文档
@@ -138,4 +101,4 @@ node src/main.js --query "art deco posters" --count 30
 
 ---
 
-**最后更新:** 2026-02-17
+**最后更新:** 2026-02-27

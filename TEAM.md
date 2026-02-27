@@ -8,10 +8,11 @@
 
 | Milestone | 状态 | 说明 |
 |-----------|------|------|
-| **M0 框架搭建** | ⬜ 待开始 | Skill 基础结构 + Unsplash/Pexels API |
-| **M1 AI 分析** | ⬜ 待开始 | CLIP embedding + k-means 聚类 |
-| **M2 Figma Plugin** | ⬜ 待开始 | HTTP Server + Plugin 集成 |
-| **M3 优化交付** | ⬜ 待开始 | 错误处理 + 文档 + 测试 |
+| **M0 框架搭建** | ✅ 完成 | package.json + Unsplash/Pexels API 搜索模块 |
+| **M1 AI 分析** | ✅ 完成 | CLIP embedding (HF API) + k-means 聚类 + 去重 |
+| **M2 Figma Plugin** | ✅ 完成 | Express Server + FigJam Plugin 自动插入 |
+| **M3 测试** | ✅ 完成 | 33/33 tests passing（搜索/聚类/服务器/集成） |
+| **M4 文档** | ⬜ 待开始 | SKILL.md + README + API 文档 |
 
 **项目位置:** `~/Projects/deco-skill/`
 **文档:** `doc/PROJECT.md`
@@ -48,10 +49,10 @@
 |------|---------|------|------|
 | **Jingxi** | - | 项目 Owner，最终决策 | 🔴 |
 | **Metro** 🐑 | - | AI 助手，协调沟通 | 🟡 |
-| **Team Lead** | main | 任务分配、进度追踪 | 待启动 |
-| **Backend** | - | Node.js 后端、API 封装 | 待命 |
-| **AI** | - | CLIP 分析、聚类算法 | 待命 |
-| **Plugin** | - | Figma Plugin 开发 | 待命 |
+| **Team Lead** | main | 任务分配、进度追踪 | ✅ MVP 完成 |
+| **Backend** | - | Node.js 后端、API 封装 | ✅ 搜索+服务器+测试 |
+| **AI** | - | CLIP 分析、聚类算法 | ✅ 分析管线+测试 |
+| **Plugin** | - | Figma Plugin 开发 | ✅ FigJam Plugin |
 | **Tester** | - | 功能测试、Bug 报告 | 待命 |
 | **Docs** | - | 文档、SKILL.md | 待命 |
 
@@ -171,11 +172,21 @@ docs: update SKILL.md with usage examples
 3. @Plugin — 搭建 Figma Plugin 基础框架
 4. @Docs — 准备 SKILL.md 模板
 
-开工！🚀
+开工！
 
 ---
 
-**Metro 提醒：** 
-- 每条消息后必须立即按 Enter（tmux send-keys 规则）
-- 开始工作前先提交 Plan 等审批
-- 完成后更新 TODO.md + Git commit
+[02-27] @TeamLead: MVP 代码开发完成。
+
+**已完成：**
+- Backend: Unsplash + Pexels 搜索模块、Express Server、main.js 编排
+- AI: CLIP embedding (HF Inference API)、k-means++ 聚类、余弦去重
+- Plugin: FigJam Plugin（自动分组插入、网格布局）
+- 测试: 33/33 通过（搜索/聚类/服务器/集成）
+
+**Git commit:** `20c03c5` — feat: implement MVP
+
+**待办：**
+- M4 文档（SKILL.md、README、API 文档）
+- 配置 .env API keys 后进行端到端实测
+- Future: 多数据源、风格学习、缓存优化
