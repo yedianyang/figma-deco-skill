@@ -51,19 +51,12 @@
 
 ---
 
-### M4: 文档 ⬜ 待开始
+### M4: 文档 ✅
 
 **Docs:**
-- [ ] `SKILL.md` — Skill 说明文档
-- [ ] `README.md` — 项目介绍 + 快速开始
-- [ ] API 文档 — HTTP Server 端点说明
-- [ ] 用户文档 — OpenClaw 使用指南
-
-**内容要求:**
-- 安装步骤
-- 配置说明（API keys）
-- 使用示例
-- 故障排查
+- [x] `SKILL.md` — Skill 说明文档（用法、配置、输出格式、故障排查）
+- [x] `README.md` — 项目介绍 + 快速开始 + 项目结构
+- [x] `doc/API.md` — HTTP Server 端点说明（GET /data, POST /search, GET /health）
 
 ---
 
@@ -101,4 +94,4 @@
 
 ---
 
-**最后更新:** 2026-02-27
+**最后更新:** 2026-03-01

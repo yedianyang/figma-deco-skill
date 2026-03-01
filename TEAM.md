@@ -12,7 +12,7 @@
 | **M1 AI 分析** | ✅ 完成 | CLIP embedding (HF API) + k-means 聚类 + 去重 |
 | **M2 Figma Plugin** | ✅ 完成 | Express Server + FigJam Plugin 自动插入 |
 | **M3 测试** | ✅ 完成 | 33/33 tests passing（搜索/聚类/服务器/集成） |
-| **M4 文档** | ⬜ 待开始 | SKILL.md + README + API 文档 |
+| **M4 文档** | ✅ 完成 | README + SKILL.md + doc/API.md |
 
 **项目位置:** `~/Projects/deco-skill/`
 **文档:** `doc/PROJECT.md`
